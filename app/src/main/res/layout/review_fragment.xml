@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="dropViewModel"
+            type="com.example.dropittest.main.DropViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".review.ReviewFragment">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/start_details_review"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.4" />
+
+        <TextView
+            android:id="@+id/contact_title_label_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#F0F0F0"
+            android:padding="8dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:text="@string/contact_details_title_text_view"
+            android:textSize="14sp"
+            android:textColor="@color/gray"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/full_name_review_iv"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="14dp"
+            android:src="@drawable/ic_person_outline_black_24dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/contact_title_label_tv"
+            android:contentDescription="@string/person_iv" />
+
+        <TextView
+            android:id="@+id/full_name_review_label_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/full_name_label_text_view"
+            android:textSize="16sp"
+            android:textColor="@android:color/black"
+            app:layout_constraintStart_toEndOf="@+id/full_name_review_iv"
+            app:layout_constraintTop_toBottomOf="@id/contact_title_label_tv" />
+
+        <TextView
+            android:id="@+id/full_name_review_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:textSize="16sp"
+            android:textColor="@android:color/black"
+            app:layout_constraintStart_toEndOf="@id/start_details_review"
+            app:layout_constraintTop_toTopOf="@id/full_name_review_label_tv"
+            tools:text="Yishai Greenberg"
+            android:text="@{dropViewModel.dropLiveData}"
+            dropViewModel="@{dropViewModel}"/>
+
+        <View
+            android:id="@+id/line_bottom_full_name_view"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="16dp"
+            android:background="@android:color/darker_gray"
+            app:layout_constraintTop_toBottomOf="@id/full_name_review_label_tv" />
+
+        <ImageView
+            android:id="@+id/phone_review_iv"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="14dp"
+            android:src="@drawable/ic_phone_android_black_24dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/line_bottom_full_name_view"
+            android:contentDescription="@string/phone_image" />
+
+        <TextView
+            android:id="@+id/phone_review_label_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/phone_label_text_view"
+            android:textSize="16sp"
+            android:textColor="@android:color/black"
+            app:layout_constraintStart_toEndOf="@+id/phone_review_iv"
+            app:layout_constraintTop_toBottomOf="@id/line_bottom_full_name_view" />
+
+        <TextView
+            android:id="@+id/phone_review_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:textSize="16sp"
+            android:textColor="@android:color/black"
+            app:layout_constraintStart_toEndOf="@id/start_details_review"
+            app:layout_constraintTop_toTopOf="@id/phone_review_label_tv"
+            tools:text="+972542640060"
+            android:text="@{dropViewModel.dropLiveData}"
+            dropViewModel="@{dropViewModel}"/>
+
+        <TextView
+            android:id="@+id/address_title_label_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="#F0F0F0"
+            android:padding="8dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:text="@string/address_details_text_view"
+            android:textSize="14sp"
+            android:textColor="@color/gray"
+            app:layout_constraintTop_toBottomOf="@id/phone_review_tv" />
+
+        <ImageView
+            android:id="@+id/address_review_iv"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="14dp"
+            android:src="@drawable/ic_neighborhood"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/address_title_label_tv"
+            android:contentDescription="@string/street_image" />
+
+        <TextView
+            android:id="@+id/address_review_label_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/address_text_view"
+            android:textSize="16sp"
+            android:textColor="@android:color/black"
+            app:layout_constraintStart_toEndOf="@+id/address_review_iv"
+            app:layout_constraintTop_toBottomOf="@id/address_title_label_tv" />
+
+        <TextView
+            android:id="@+id/address_review_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:textSize="16sp"
+            android:textColor="@android:color/black"
+            app:layout_constraintStart_toEndOf="@id/start_details_review"
+            app:layout_constraintTop_toTopOf="@id/address_review_label_tv"
+            tools:text="Dizengoff 22"
+            android:text="@{dropViewModel.dropLiveData}"
+            dropViewModel="@{dropViewModel}"/>
+
+        <View
+            android:id="@+id/line_bottom_address_view"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="16dp"
+            android:background="@android:color/darker_gray"
+            app:layout_constraintTop_toBottomOf="@id/address_review_label_tv" />
+
+        <ImageView
+            android:id="@+id/city_review_iv"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="14dp"
+            android:src="@drawable/ic_urban"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/line_bottom_address_view"
+            android:contentDescription="@string/city_image" />
+
+        <TextView
+            android:id="@+id/city_review_label_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/city_label_text_view"
+            android:textSize="16sp"
+            android:textColor="@android:color/black"
+            app:layout_constraintStart_toEndOf="@+id/city_review_iv"
+            app:layout_constraintTop_toBottomOf="@id/line_bottom_address_view" />
+
+        <TextView
+            android:id="@+id/city_review_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:textSize="16sp"
+            android:textColor="@android:color/black"
+            app:layout_constraintStart_toEndOf="@id/start_details_review"
+            app:layout_constraintTop_toTopOf="@id/city_review_label_tv"
+            tools:text="Tel Aviv"
+            android:text="@{dropViewModel.dropLiveData}"
+            dropViewModel="@{dropViewModel}"/>
+
+        <View
+            android:id="@+id/line_bottom_city_view"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="16dp"
+            android:background="@android:color/darker_gray"
+            app:layout_constraintTop_toBottomOf="@id/city_review_tv" />
+
+        <ImageView
+            android:id="@+id/country_review_iv"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="14dp"
+            android:src="@drawable/ic_flag"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/line_bottom_city_view"
+            android:contentDescription="@string/flag_image" />
+
+        <TextView
+            android:id="@+id/country_review_label_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/country_label_text_view"
+            android:textSize="16sp"
+            android:textColor="@android:color/black"
+            app:layout_constraintStart_toEndOf="@+id/country_review_iv"
+            app:layout_constraintTop_toBottomOf="@id/line_bottom_city_view" />
+
+        <TextView
+            android:id="@+id/country_review_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:textSize="16sp"
+            android:textColor="@android:color/black"
+            app:layout_constraintStart_toEndOf="@id/start_details_review"
+            app:layout_constraintTop_toTopOf="@id/country_review_label_tv"
+            tools:text="Israel"
+            android:text="@{dropViewModel.dropLiveData}"
+            dropViewModel="@{dropViewModel}"/>
+
+        <TextView
+            android:id="@+id/bags_title_label_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="#F0F0F0"
+            android:padding="8dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:text="@string/bags_title_text_view"
+            android:textSize="14sp"
+            android:textColor="@color/gray"
+            app:layout_constraintTop_toBottomOf="@id/country_review_label_tv" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/display_bags_rv"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="16dp"
+            setupRecycler="@{dropViewModel.dropLiveData}"
+            dropViewModel="@{dropViewModel}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/bags_title_label_tv" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

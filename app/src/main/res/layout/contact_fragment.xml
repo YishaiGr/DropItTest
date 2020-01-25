@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="contactViewModel"
+            type="com.example.dropittest.contact.ContactViewModel" />
+
+        <variable
+            name="dropViewModel"
+            type="com.example.dropittest.main.DropViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".contact.ContactFragment">
+
+        <TextView
+            android:id="@+id/instruction_contact_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="80dp"
+            android:layout_marginEnd="16dp"
+            android:gravity="center"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:text="@string/enter_below_your_full_name_and_phone_number"
+            android:textSize="24sp"
+            android:textColor="@android:color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/edit_texts_top"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.30" />
+
+        <EditText
+            android:id="@+id/full_name_contact_et"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="32dp"
+            android:paddingTop="8dp"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:paddingBottom="8dp"
+            android:background="@drawable/edit_text_green_bg"
+            android:hint="@string/full_name_hint"
+            app:layout_constraintTop_toBottomOf="@id/edit_texts_top"
+            android:text="@{contactViewModel.contactLiveData}"
+            dropViewModel="@{dropViewModel}" />
+
+        <EditText
+            android:id="@+id/phone_number_contact_et"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="32dp"
+            android:paddingTop="8dp"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:paddingBottom="8dp"
+            android:background="@drawable/edit_text_green_bg"
+            android:hint="@string/phone_number_hint"
+            android:inputType="phone"
+            app:layout_constraintStart_toEndOf="@+id/phone_country_code_spinner"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/full_name_contact_et"
+            android:text="@{contactViewModel.contactLiveData}"
+            dropViewModel="@{dropViewModel}"/>
+
+        <Spinner
+            android:id="@+id/phone_country_code_spinner"
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/full_name_contact_et"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="16dp"
+            android:backgroundTint="@color/green"
+            countryCodes="@{contactViewModel.countryCodesLiveData}"
+            contact="@{contactViewModel.contactLiveData}"
+            dropViewModel="@{dropViewModel}"/>
+
+        <Button
+            android:id="@+id/next_contact_btn"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:text="@string/next_button"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:textColor="@android:color/white"
+            android:background="@drawable/button_black_bg" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

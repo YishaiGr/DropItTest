@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/contactFragment">
+
+    <fragment
+        android:id="@+id/contactFragment"
+        android:name="com.example.dropittest.contact.ContactFragment"
+        android:label="contact_fragment"
+        tools:layout="@layout/contact_fragment" >
+        <action
+            android:id="@+id/action_contactFragment_to_addressFragment"
+            app:destination="@id/addressFragment" />
+        <action
+            android:id="@+id/action_contactFragment_to_errorFragment"
+            app:destination="@id/errorFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addressFragment"
+        android:name="com.example.dropittest.address.AddressFragment"
+        android:label="address_fragment"
+        tools:layout="@layout/address_fragment" >
+        <action
+            android:id="@+id/action_addressFragment_to_bagsFragment"
+            app:destination="@id/bagsFragment" />
+        <action
+            android:id="@+id/action_addressFragment_to_errorFragment"
+            app:destination="@id/errorFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/bagsFragment"
+        android:name="com.example.dropittest.bags.BagsFragment"
+        android:label="bags_fragment"
+        tools:layout="@layout/bags_fragment" >
+        <action
+            android:id="@+id/action_bagsFragment_to_reviewFragment"
+            app:destination="@id/reviewFragment" />
+        <action
+            android:id="@+id/action_bagsFragment_to_errorFragment"
+            app:destination="@id/errorFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/reviewFragment"
+        android:name="com.example.dropittest.review.ReviewFragment"
+        android:label="ReviewFragment" />
+    <fragment
+        android:id="@+id/errorFragment"
+        android:name="com.example.dropittest.util.ErrorFragment"
+        android:label="error_fragment"
+        tools:layout="@layout/error_fragment" />
+</navigation>
