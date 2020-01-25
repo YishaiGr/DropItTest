@@ -17,7 +17,7 @@
     <string name="phone_label_text_view">Phone:</string>
     <string name="bags_title_text_view">BAGS</string>
     <string name="error_title">Error</string>
-    <string name="ok_yes_button_alert_dialog">Ok</string>
+    <string name="ok_yes_button_alert_dialog">OK</string>
     <string name="some_error_occurred_message">Some Error Occurred</string>
     <string name="add_bag_button">ADD</string>
     <string name="bag_image_description">Bag image</string>
@@ -241,7 +241,6 @@
         <item>263,ZW</item>
     </string-array>
 
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="oops_huston_we_ve_got_a_problem">Oops,\nHuston we\'ve got an error!</string>
     <string name="please_check_your_internet_connection">Please check your internet connection.</string>
